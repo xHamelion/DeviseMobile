@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeviseMobile.Views.AboutPage"
+             xmlns:vm="clr-namespace:DeviseMobile.ViewModels"
+             Title="Каталог товаров">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Справка" Clicked="ToolbarItem_Clicked" Order="Secondary" IconImageSource="Help.png" />
+         
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" BackgroundColor="#96d1ff">
+            <Entry Grid.Row="0" x:Name="NameTovar" Placeholder="Введите название товара"
+                    TextChanged="NameTovar_TextChanged" HorizontalTextAlignment="Center"/>
+            <StackLayout Grid.Row="0">
+                <Picker x:Name="Tip" SelectedIndexChanged="Tip_SelectedIndexChanged" HorizontalTextAlignment="Center"/>
+                <Picker x:Name="PodTip" HorizontalTextAlignment="Center" SelectedIndexChanged="PodTip_SelectedIndexChanged"/>
+            </StackLayout>
+        </StackLayout>
+
+      
+        
+        
+        <ScrollView Grid.Row="1" >
+            <ListView x:Name="DatesTovar" ItemSelected="DatesTovar_ItemSelected" 
+                    HasUnevenRows="True"  >
+                <ListView.ItemTemplate >
+                    <DataTemplate  >
+                        <ViewCell >
+                            <StackLayout Orientation="Vertical" Padding="0,10,0,0">
+
+                            <Grid  Padding="20" BackgroundColor="AliceBlue">
+                            <!--<StackLayout Orientation="Vertical"   >
+                                    <Label BackgroundColor="AliceBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Tip}"/>
+                                                <Span Text=" > "/>
+                                                <Span Text="{Binding PodTip}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Image Aspect="AspectFit" Source="{Binding Photo}" SizeChanged="Image_SizeChanged"/>
+                                    <Editor  Text="{Binding Opis}"  
+                                         IsReadOnly="True"  HeightRequest="500"
+                                />
+
+
+                                    <Label  VerticalTextAlignment="Center"  >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding KollSh}"/>
+                                                <Span Text="&#x0a;"/>
+                                                <Span Text=" "/>
+                                                <Span Text="{Binding ZenaR}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding KollSh}"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding ZenaR}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                                    <Label Margin="5" FontSize="30" HorizontalOptions="Center" Text="{Binding Name}"/>
+                                <Image HeightRequest="250" Source="{Binding Photo}" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>-->
+
+                                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label BackgroundColor="AliceBlue" Grid.Row="0" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Tip}"/>
+                                            <Span Text=" > "/>
+                                            <Span Text="{Binding PodTip}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Image Aspect="AspectFit"  Source="{Binding Photo}"  Grid.Row="1" />
+                                <Label  Text="{Binding Opis}" Grid.Row="2"   FontSize="Medium"
+                                         BackgroundColor="AliceBlue"
+                                />
+
+
+                                <Label  Grid.Row="3" VerticalTextAlignment="Center"  FontAttributes="Bold"
+                                        FontSize="Medium" BackgroundColor="AliceBlue">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding KollSh}"/>
+                                                <!--<Span Text="&#x0a;"/>-->
+                                                <Span Text=" "/>
+                                                <Span Text="{Binding ZenaR}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                </Label>
+                                
+                                <!--<Label Text="{Binding KollSh}"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding ZenaR}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                                <Label Margin="5" FontSize="30" HorizontalOptions="Center" Text="{Binding Name}"/>
+                                <Image HeightRequest="250" Source="{Binding Photo}" HorizontalOptions="FillAndExpand"/>-->
+
+                            </Grid>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    
+    </Grid>
+
+</ContentPage>

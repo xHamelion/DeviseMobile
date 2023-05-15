@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeviseMobile.Spravka">
+    <ContentPage.Content>
+        <ScrollView>
+            <!--FontFamily="Comic"-->
+            <StackLayout Padding="10,0,10,0" VerticalOptions="StartAndExpand">
+                <Label Text="СПРАВКА" FontSize="20"  HorizontalOptions="Center" FontAttributes="Bold" Margin="20"/>
+
+                <Label FontSize="1"/>
+                <StackLayout >
+                    <Label Text="   1.Каталог товаров"
+                       FontSize="17" FontFamily="Comic"/>
+                    <Image HeightRequest="500" WidthRequest="500" Source="KatalogSprav.png" Margin="20" HorizontalOptions="Start"/>
+                    <Label Text="   Данная страница предназначена для ознакомления с товарми и их поиском."
+                       FontSize="17" FontFamily="Comic"/>
+                </StackLayout>
+                <Label Text=" "/>
+
+                <StackLayout>
+                    <Label Text="   2.О товаре"
+                       FontSize="17" FontFamily="Comic"/>
+                    <Image HeightRequest="500" WidthRequest="500" Source="O_TovareSprav.png" Margin="20" HorizontalOptions="Start" />
+                    <Label  Text="   При нажатии на товар открываеться более подробная информация о товаре.!&#10;   Здесь есть возможность добавления товара в корзину с определенным количством товара который есть на складе."
+                       FontSize="17" FontFamily="Comic"/>
+                     
+                </StackLayout>
+                <Label Text=" "/>
+
+                <StackLayout>
+                    <Label Text="   3.Корзина"
+                       FontSize="17" FontFamily="Comic"/>
+                    <Image HeightRequest="500" WidthRequest="500" Source="KarzinSprav.png" Margin="20" HorizontalOptions="Start"/>
+                    <Label Text="   Здесь присутвуют товары котрые вы выбрали для покупки. Их можно удалить, для этого нужно выбрать товар и нажать кнопку удалить. Товар можно забрать в магазине"
+                       FontSize="17" FontFamily="Comic"/>
+                </StackLayout>
+                <!--<Label FontFamily="Comic" FontSize="17" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString >
+                            <Span/>
+                            <Span Text="4.Играйте" TextColor="DeepSkyBlue" FontAttributes="Bold"
+                                  FontSize="17"/>
+                            <Span Text=" в своё удовольствие."/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>-->
+                <Label Text=" "/>
+                <Label Text="АВТОР" FontSize="20"  HorizontalOptions="Center" FontAttributes="Bold" Margin="20"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="25*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
+                        <Label Text="   Создатель -> Елушов Даниил ИСП-41 by(xHamelion):" 
+                       FontFamily="Comic" FontSize="18" />
+                        <Label Text="   Место обучения -> ГАПОУ АО ВИЭК - Вельский Индустриально Экономический Колледж" 
+                       FontFamily="Comic" FontSize="18" />
+                        <Label Text="   Контактный телефон -> +7(921)481-57-42" 
+                       FontFamily="Comic" FontSize="18" />
+                        <Label Text="   E-mail -> daniilelushov@mail.ru" 
+                       FontFamily="Comic" FontSize="18" />
+                    </StackLayout>
+                    <Image Source="pngwing.png" HeightRequest="300" HorizontalOptions="Start" Grid.Column="1"/>
+                </Grid>
+                <StackLayout Orientation="Horizontal">
+
+
+                </StackLayout>
+                <Button VerticalOptions="Center" Text="Вернуться" Clicked="Button_Clicked"/>
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

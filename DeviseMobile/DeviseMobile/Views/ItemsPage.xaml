@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeviseMobile.Views.ItemsPage"
+             Title="Корзина"
+             xmlns:local="clr-namespace:DeviseMobile.ViewModels"  
+             xmlns:model="clr-namespace:DeviseMobile.Models"  
+             x:Name="BrowseItemsPage">
+
+     
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" VerticalOptions="Center">
+                <Label x:Name="KodVidashi" FontSize="Medium" />
+
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center">
+                <Label x:Name="Zena"  HorizontalTextAlignment="End" FontSize="Medium" />
+
+            </StackLayout>
+            <Label x:Name="KolTov" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"   Text="Корзина пуста" HorizontalTextAlignment="Center" FontSize="20"/>
+            <!--<Label x:Name=""/>-->
+        </Grid>
+        <ScrollView Grid.Row="1" >
+            <ListView x:Name="DatesTovar"   HasUnevenRows="True" >
+                <ListView.ItemTemplate >
+                    <DataTemplate   >
+                        <ViewCell >
+                            <StackLayout Orientation="Vertical" Padding="0,10,0,0"  >
+                                <!--Gainsboro--> <!--Lavender-->
+
+                                <Grid   Padding="20">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+
+                                    <Label   Grid.Row="0" Grid.ColumnSpan="2"  FontAttributes="Bold" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Tip}"/>
+                                            <Span Text=" > "/>
+                                            <Span Text="{Binding PodTip}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+
+
+                                    <Image   Source="{Binding Photo}" Grid.ColumnSpan="2" Aspect="AspectFit" Grid.Row="1" />
+                                    <Label Text="{Binding Opis}" FontSize="Subtitle"   Grid.Row="2" 
+                                        Grid.ColumnSpan="2"
+                                />
+
+
+                                    <Label   Grid.Row="3" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Medium">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding KollSh}"/>
+                                            <Span Text=" "/>
+                                            <Span Text="{Binding ZenaR}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                    <!--<Label Text="{Binding KollSh}"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text="{Binding ZenaR}" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+
+                                <!--<Label Margin="5" FontSize="30" HorizontalOptions="Center" Text="{Binding Name}"/>
+                                <Image HeightRequest="250" Source="{Binding Photo}" HorizontalOptions="FillAndExpand"/>-->
+
+                            </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+        <Grid Grid.Row="2"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Удалить" FontSize="Medium" Grid.Column="2" x:Name="Dell" Clicked="Dell_Clicked"/>
+        </Grid>
+        <Label Text="Забрать арендованный заказ можно по адресу: г.Вельск, ул. Дзержинского, дом 107, 'Девайс'." Grid.Row="3" 
+               HorizontalTextAlignment="Center" FontSize="20"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DeviseMobile.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center" Orientation="Vertical">
+            <Label Text="Обезательные поля*" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5"/>
+            <Grid  x:Name="FIO" IsVisible="False" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" x:Name="Fam" Placeholder="Фамилия" Grid.Row="1"/>
+                <Entry Grid.Column="1" x:Name="Name" Placeholder="Имя" Grid.Row="1"/>
+            </Grid>
+            <Entry Placeholder="Логин*" x:Name="Login"/>
+            <Entry Placeholder="Пароль*" x:Name="Pass"/>
+            <Entry Placeholder="Телефон" x:Name="Tel" IsVisible="False"/>
+            <Entry Placeholder="E-mail" x:Name="eMail" IsVisible="False"/>
+            <Grid  HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button  HorizontalOptions="FillAndExpand" FontSize="20" x:Name="BTNlog"
+                        VerticalOptions="FillAndExpand" Grid.Column="0" Text="Войти"   Clicked="Button_Clicked"/>
+                <StackLayout  Grid.Column="1">
+                    <RadioButton x:Name="RBvhod" Content="Вход" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton x:Name="RBReg" Content="Регистрация" CheckedChanged="RadioButton_CheckedChanged_1"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

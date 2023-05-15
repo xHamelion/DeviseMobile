@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeviseMobile.TovarPage"
+             Title="О товаре">
+    <ContentPage.Content>
+         
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<StackLayout VerticalOptions="Center" Grid.Column="0" HorizontalOptions="Fill" >-->
+                        <Label x:Name="Tovarss" Text="DSDSDS" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0" />
+                        
+                            <Label x:Name="Coll" HorizontalOptions="CenterAndExpand" FontSize="20" Grid.Row="1"/>
+                            <Label x:Name="Zena"   FontSize="20" HorizontalOptions="CenterAndExpand" Grid.Row="2"/>
+
+                        
+                        
+                    <!--</StackLayout>-->
+                    <Image Grid.Column="1" x:Name="Img" HeightRequest="150" WidthRequest="150" HorizontalOptions="End" Grid.Row="0" Grid.RowSpan="3"/>
+                </Grid>
+                <ScrollView Orientation="Vertical" Grid.Row="1">
+                    <Label x:Name="Opisans"    Margin="0,0,0,0"  >
+                    </Label>
+                </ScrollView>
+                
+                <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Center">
+                    <Switch Toggled="Switch_Toggled" IsToggled="False" VerticalOptions="Center"/>
+                    <Label Text="Скрыто" x:Name="TogledStatus" VerticalOptions="Center"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Vertical" Grid.Row="3" Margin="20">
+                    <Grid HorizontalOptions="End">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*"/>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="В корзину" Clicked="Button_Clicked" Grid.Column="0"/>
+                        <Button Text="-" Clicked="Button_Clicked_1" Grid.Column="1"/>
+                        <Label x:Name="Kollss" Text="1" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20" />
+                        <Button Text="+" Clicked="Button_Clicked_2" Grid.Column="3"/>
+
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            
+        
+        
+    </ContentPage.Content>
+</ContentPage>
