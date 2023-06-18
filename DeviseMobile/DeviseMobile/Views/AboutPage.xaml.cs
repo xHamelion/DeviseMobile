@@ -100,18 +100,18 @@ namespace DeviseMobile.Views
             kategors.Clear();
             PodTip.Items.Clear();
             string s = $"{Hold.Adress}/api/View_PodTip";
-            //try
-            //{
+            try
+            {
                 client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(Pod_tip);
-                client.DownloadStringAsync(new Uri( $"{Hold.Adress}/api/View_PodTip"));
+                client.DownloadStringAsync(new Uri($"{Hold.Adress}/api/View_PodTip"));
 
-                
-            //}
-            //catch
-            //{
-            //   await  Navigation.PushAsync(new NonInternet());
 
-            //}
+            }
+            catch
+            {
+                await Navigation.PushAsync(new NonInternet());
+
+            }
 
             PodTip.Items.Add("Все подкатегории");
             Tip.SelectedIndex = 0;
@@ -119,10 +119,16 @@ namespace DeviseMobile.Views
         }
         public async void DownloadNazenka(object sender, DownloadStringCompletedEventArgs e)
         {
+            try { 
             string n = e.Result;
             nazenka = Convert.ToDouble(n.Substring(1, n.LastIndexOf('\"') - 1));
             Hold.Nazenka = nazenka;
+            }
+            catch
+            {
+                Navigation.PushAsync(new NonInternet());
 
+            }
         }
         double nazenka = Hold.Nazenka;
 
