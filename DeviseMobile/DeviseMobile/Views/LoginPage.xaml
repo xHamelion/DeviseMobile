@@ -18,13 +18,13 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0" x:Name="Fam" Placeholder="Фамилия" Grid.Row="1"/>
-                <Entry Grid.Column="1" x:Name="Name" Placeholder="Имя" Grid.Row="1"/>
+                <Entry Grid.Column="0" x:Name="Fam" Placeholder="Фамилия" PlaceholderColor="Gray" BackgroundColor="AliceBlue" TextColor="Black" Grid.Row="1"/>
+                <Entry Grid.Column="1" x:Name="Name" Placeholder="Имя" PlaceholderColor="Gray" Grid.Row="1" BackgroundColor="AliceBlue" TextColor="Black"/>
             </Grid>
-            <Entry Placeholder="Логин*" x:Name="Login"/>
-            <Entry Placeholder="Пароль*" x:Name="Pass"/>
-            <Entry Placeholder="Телефон" x:Name="Tel" IsVisible="False"/>
-            <Entry Placeholder="E-mail" x:Name="eMail" IsVisible="False"/>
+            <Entry Placeholder="Логин*" x:Name="Login" BackgroundColor="AliceBlue" TextColor="Black"/>
+            <Entry PlaceholderColor="Gray" Placeholder="Пароль*" x:Name="Pass" BackgroundColor="AliceBlue" TextColor="Black"/>
+            <Entry PlaceholderColor="Gray" Placeholder="Телефон" x:Name="Tel" IsVisible="False" BackgroundColor="AliceBlue" TextColor="Black"/>
+            <Entry Placeholder="E-mail" x:Name="eMail" PlaceholderColor="Gray" IsVisible="False" BackgroundColor="AliceBlue" TextColor="Black"/>
             <Grid  HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -33,8 +33,8 @@
                 <Button  HorizontalOptions="FillAndExpand" FontSize="20" x:Name="BTNlog"
                         VerticalOptions="FillAndExpand" Grid.Column="0" Text="Войти"   Clicked="Button_Clicked"/>
                 <StackLayout  Grid.Column="1">
-                    <RadioButton x:Name="RBvhod" Content="Вход" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged"/>
-                    <RadioButton x:Name="RBReg" Content="Регистрация" CheckedChanged="RadioButton_CheckedChanged_1"/>
+                    <RadioButton x:Name="RBvhod" Content="Вход" IsChecked="True" CheckedChanged="RadioButton_CheckedChanged" BackgroundColor="AliceBlue" TextColor="Black"/>
+                    <RadioButton x:Name="RBReg" Content="Регистрация" BorderColor="Aqua" CheckedChanged="RadioButton_CheckedChanged_1" BackgroundColor="AliceBlue" TextColor="Black"/>
                 </StackLayout>
             </Grid>
         </StackLayout>

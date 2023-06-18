@@ -29,14 +29,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" VerticalOptions="Center">
-                <Label x:Name="KodVidashi" FontSize="Medium" />
+                <Label x:Name="KodVidashi" FontSize="Medium" TextColor="Black" />
 
             </StackLayout>
             <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center">
-                <Label x:Name="Zena"  HorizontalTextAlignment="End" FontSize="Medium" />
+                <Label x:Name="Zena"  HorizontalTextAlignment="End" FontSize="Medium" TextColor="Black" />
 
             </StackLayout>
-            <Label x:Name="KolTov" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"   Text="Корзина пуста" HorizontalTextAlignment="Center" FontSize="20"/>
+            <Label x:Name="KolTov" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextColor="Black"   Text="Корзина пуста" HorizontalTextAlignment="Center" FontSize="20"/>
             <!--<Label x:Name=""/>-->
         </Grid>
         <ScrollView Grid.Row="1" >
@@ -60,7 +60,7 @@
                                 </Grid.RowDefinitions>
 
 
-                                    <Label   Grid.Row="0" Grid.ColumnSpan="2"  FontAttributes="Bold" >
+                                    <Label  TextColor="Black" Grid.Row="0" Grid.ColumnSpan="2"  FontAttributes="Bold" >
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="{Binding Tip}"/>
@@ -73,12 +73,12 @@
 
 
                                     <Image   Source="{Binding Photo}" Grid.ColumnSpan="2" Aspect="AspectFit" Grid.Row="1" />
-                                    <Label Text="{Binding Opis}" FontSize="Subtitle"   Grid.Row="2" 
+                                    <Label TextColor="Black" Text="{Binding Opis}" FontSize="Subtitle"   Grid.Row="2" 
                                         Grid.ColumnSpan="2"
                                 />
 
 
-                                    <Label   Grid.Row="3" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Medium">
+                                    <Label TextColor="Black"   Grid.Row="3" VerticalTextAlignment="Center"  FontAttributes="Bold" FontSize="Medium">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="{Binding KollSh}"/>
@@ -110,7 +110,7 @@
             </Grid.ColumnDefinitions>
             <Button Text="Удалить" FontSize="Medium" Grid.Column="2" x:Name="Dell" Clicked="Dell_Clicked"/>
         </Grid>
-        <Label Text="Забрать арендованный заказ можно по адресу: г.Вельск, ул. Дзержинского, дом 107, 'Девайс'." Grid.Row="3" 
+        <Label TextColor="Black" Text="Забрать арендованный заказ можно по адресу: г.Вельск, ул. Дзержинского, дом 107, 'Девайс'." Grid.Row="3" 
                HorizontalTextAlignment="Center" FontSize="20"/>
     </Grid>
 </ContentPage>

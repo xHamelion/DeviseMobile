@@ -119,7 +119,7 @@ namespace DeviseMobile.Views
         {
             try
             {
-
+                
                 string otvs = e.Result;
                 string Zakaz = "";
                 string numer = "";

@@ -100,18 +100,18 @@ namespace DeviseMobile.Views
             kategors.Clear();
             PodTip.Items.Clear();
             string s = $"{Hold.Adress}/api/View_PodTip";
-            try
-            {
+            //try
+            //{
                 client.DownloadStringCompleted += new DownloadStringCompletedEventHandler(Pod_tip);
                 client.DownloadStringAsync(new Uri( $"{Hold.Adress}/api/View_PodTip"));
 
                 
-            }
-            catch
-            {
-               await  Navigation.PushAsync(new NonInternet());
+            //}
+            //catch
+            //{
+            //   await  Navigation.PushAsync(new NonInternet());
 
-            }
+            //}
 
             PodTip.Items.Add("Все подкатегории");
             Tip.SelectedIndex = 0;
