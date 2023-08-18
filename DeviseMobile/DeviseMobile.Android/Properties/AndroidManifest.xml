@@ -2,5 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.EDAbyxHamelion.Devise" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="26" android:targetSdkVersion="28" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Девайс" android:theme="@style/MainTheme" android:icon="@mipmap/ic_launcher"></application>
+	<application android:label="Девайс" android:theme="@style/MainTheme" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" > </application>
+	
 </manifest>
+ 

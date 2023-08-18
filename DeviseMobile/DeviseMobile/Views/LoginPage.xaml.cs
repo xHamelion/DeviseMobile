@@ -206,11 +206,12 @@ namespace DeviseMobile.Views
                         newUser.Telefon = Tel.Text;
                         newUser.Login = Login.Text;
                         newUser.Pass = Pass.Text;
-                        client.UploadStringCompleted += new UploadStringCompletedEventHandler(New_User);
-                        client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                    var cl = new WebClient();
+                        cl.UploadStringCompleted += new UploadStringCompletedEventHandler(New_User);
+                        cl.Headers.Add(HttpRequestHeader.ContentType, "application/json");
                         string jsons = JsonConvert.SerializeObject(newUser);
                         jsons = JsonConvert.SerializeObject(newUser);
-                        client.UploadStringAsync(new Uri($"{Hold.Adress}/api/InternetUsers"), JsonConvert.SerializeObject(newUser));
+                        cl.UploadStringAsync(new Uri($"{Hold.Adress}/api/InternetUsers"), JsonConvert.SerializeObject(newUser));
 
                     }
                     else
@@ -231,7 +232,7 @@ namespace DeviseMobile.Views
                 await Navigation.PushAsync(new NonInternet());
 
             }
-            
+
         }
 
         int ID_userLocal = 0;
@@ -271,7 +272,11 @@ namespace DeviseMobile.Views
                 {
                     WebClient clin = new WebClient();
                     clin.DownloadStringCompleted += new DownloadStringCompletedEventHandler(Reg_Login);
-                    client.DownloadStringAsync(new Uri($"{Hold.Adress}/api/getLog?Log={Login.Text}"));
+                    Uri uri = new Uri($"{Hold.Adress}/api/getLog?Log=" +
+                        "{" +
+                        $"{Login.Text}" +
+                        "}");
+                    clin.DownloadStringAsync(uri);
                     
 
                 }

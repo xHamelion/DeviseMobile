@@ -6,11 +6,7 @@
        x:Class="DeviseMobile.AppShell"
        >
 
-    <!--
-        The overall app visual hierarchy is defined here, along with navigation.
-    
-        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
-    -->
+   
 
     <Shell.Resources>
         <ResourceDictionary>
@@ -28,10 +24,7 @@
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
 
-            <!--
-            Default Styles for all Flyout Items
-            https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes
-            -->
+             
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="White"></Setter>
             </Style>
@@ -55,9 +48,7 @@
                 </Setter>
             </Style>
 
-            <!--
-            Custom Style you can apply to any Flyout Item
-            -->
+            
             <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
@@ -74,11 +65,7 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- 
-        When the Flyout is visible this defines the content to display in the flyout.
-        FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
-        https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
-    -->
+    
     <FlyoutItem Title="Каталог" Icon="Catalog.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>
@@ -86,52 +73,14 @@
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
 
-    <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Перезайти" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked" IconImageSource="Exit.png">
     </MenuItem>
 
-    <!--
-        TabBar lets you define content that won't show up in a flyout menu. When this content is active
-        the flyout menu won't be available. This is useful for creating areas of the application where 
-        you don't want users to be able to navigate away from. If you would like to navigate to this 
-        content you can do so by calling 
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
+   
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </TabBar>
 
-    <!-- Optional Templates 
-    // These may be provided inline as below or as separate classes.
-
-    // This header appears at the top of the Flyout.
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyout-header
-    <Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <Grid>ContentHere</Grid>
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
-
-    // ItemTemplate is for ShellItems as displayed in a Flyout
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-flyoutitem-appearance
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Title, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.ItemTemplate>
-
-    // MenuItemTemplate is for MenuItems as displayed in a Flyout
-    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-menuitem-appearance
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Text, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
-
-    -->
+    
 
 </Shell>
